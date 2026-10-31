@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <button type = "button" onclick="toCelcius()">Click</button>
+    <form>
+      <label>Fahrenheit</label><br>
+      <input type ="number" id="f" placeholder="Enter the temperature"><br>
+      <button type="button" onclick = "toCelcius()">Konversi</button><br>
+      <label>Celcius</label>
+      <h1 id =  "suhuKonversi">0</h1>
+    </form>
+    <form>
+      <label>Number 1</label><br>
+      <input type ="number" id="e" placeholder="Enter the number 1"><br>
+      <label>Number 2</label><br>
+      <input type ="number" id="g" placeholder="Enter the number 2"><br>
+      <button type ="button" onclick = "plus()">+</button>
+      <button type ="button" onclick = "min()">-</button>
+      <button type ="button" onclick = "kali()">*</button>
+      <button type ="button" onclick = "bagi()">/</button><br>
+      <label>Result</label>
+      <h1 id ="hasil">0</h1>
+    </form>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  <script>
+    function sayhello(){
+      return alert("Hello World");
+    }
+
+    function toCelcius(){
+    let suhuFahrenheit = document.getElementById("f").value;
+    let konversi = (5/9)* (suhufahrenheit-32);
+    return document.getElementById("suhuKonversi").innerHTML = konversi.toFixed(2);
+   }
+
+
+   function plus (){
+    let number1 = Number(document.getElementById("e").value);
+    let number2 = Number(document.getElementById("g").value);
+    let total = 0;
+    total = number1 + number2;
+    return document.getElementById("hasil").innerHTML= total;
+   }
+   function min (){
+    let number1 = Number(document.getElementById("e").value);
+    let number2 = Number(document.getElementById("g").value);
+    let total =0;
+    total= number1 - number2;
+    return document.getElementById("hasil").innerHTML= total;
+   }
+   function kali (){
+    let number1 = Number(document.getElementById("e").value);
+    let number2 = Number(document.getElementById("g").value);
+    let total = 0;
+    total = number1 * number2;
+    return document.getElementById("hasil").innerHTML= total;
+   }
+   function bagi (){
+    let number1 = Number(document.getElementById("e").value);
+    let number2 = Number(document.getElementById("g").value);
+    let total = 0;
+    total = number1 / number2;
+    return document.getElementById("hasil").innerHTML= total;
+   }
+  </script>
+</html>
